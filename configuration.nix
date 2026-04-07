@@ -72,6 +72,7 @@ in
     brightnessctl
     rofi
     nh
+    gh
     cloudflare-warp
   ];
 
