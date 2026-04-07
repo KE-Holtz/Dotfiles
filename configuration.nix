@@ -71,7 +71,6 @@ in
     neovim
     brightnessctl
     rofi
-    gh
     nh
     cloudflare-warp
   ];
