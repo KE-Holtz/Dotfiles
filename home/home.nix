@@ -34,6 +34,8 @@
     };
     #Disable waybar - it asks stylix for the monospace font in it's own style
     targets.waybar.enable = false;
+    #Disbale vscode colors
+    targets.vscode.enable = false;
     cursor = {
       package = pkgs.rose-pine-hyprcursor;
       name = "rose-pine-hyprcursor";
