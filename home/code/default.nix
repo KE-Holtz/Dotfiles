@@ -1,5 +1,5 @@
 { config, pkgs, stylix, ... }:
 {
-  imports = [ ./vscode.nix ./languages.nix];
+  imports = [ ./editors.nix ./languages.nix ];
 }
 

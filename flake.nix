@@ -45,7 +45,7 @@
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
           home-manager.users.kyle = import home/home.nix;
-          nixpkgs.overlays = [ frc-nix.overlays.default ];
+          nixpkgs.overlays = [ inputs.frc-nix.overlays.default ];
           home-manager.extraSpecialArgs = {
             inherit inputs;
           };

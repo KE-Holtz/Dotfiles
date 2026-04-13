@@ -1,5 +1,5 @@
 { config, pkgs, ... }:
 
 {
-  vscode.enable = true;
+  programs.vscode.enable = true;
 }
