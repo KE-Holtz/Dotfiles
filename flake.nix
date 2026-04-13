@@ -18,6 +18,11 @@
       url = "github:nix-community/stylix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    frc-nix = {
+      url = "github:frc4451/frc-nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
   outputs = inputs@{ self, nixpkgs, disko, home-manager, stylix, ... }: 
@@ -40,7 +45,7 @@
           home-manager.useUserPackages = true;
           home-manager.backupFileExtension = "backup";
           home-manager.users.kyle = import home/home.nix;
-
+          nixpkgs.overlays = [ frc-nix.overlays.default ];
           home-manager.extraSpecialArgs = {
             inherit inputs;
           };
