@@ -286,7 +286,7 @@ window#waybar>box {
   border-radius: 0px;
   padding: 0px 0px;
   opacity: 1;
-  background: DarkSlateGray;
+  background: Black;
   border: none;
 }
 
