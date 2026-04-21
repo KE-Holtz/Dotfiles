@@ -5,7 +5,7 @@
   home.homeDirectory = "/home/kyle";
   home.stateVersion = "25.05";
 
-  imports = [ inputs.stylix.homeModules.stylix hypr/default.nix code/default.nix ./shell.nix ./git.nix];
+  imports = [ inputs.stylix.homeModules.stylix hypr/default.nix code/default.nix ./shell.nix ./games.nix ./git.nix];
 
   stylix = {
     enable = true;
