@@ -115,7 +115,7 @@
         "$mainMod,F, fullscreen"
 	"$mainMod, RETURN, exec, $terminal"
 	"$mainMod, Q, killactive"
-	"$mainMod, V, togglefloating" #Change
+	"$mainMod SHIFT, F, togglefloating" 
 	"$mainMod, SPACE, exec, $menu"
 	"$mainMod, P, pseudo" #Change
 	"$mainMod, h,  movefocus, l"
