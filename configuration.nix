@@ -69,6 +69,7 @@ in
 
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
+  services.cloudflare-warp.enable = true;
   environment.systemPackages = with pkgs; [
     vim
     wget
@@ -79,6 +80,7 @@ in
     nh
     gh
     unzip
+    cloudflare-warp
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
