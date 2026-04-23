@@ -69,7 +69,11 @@ in
 
   programs.firefox.enable = true;
   nixpkgs.config.allowUnfree = true;
-  services.cloudflare-warp.enable = true;
+
+  services.cloudflare-warp = {
+    enable = true;
+    openFirewall = true; # usually needed
+  };
   environment.systemPackages = with pkgs; [
     vim
     wget
