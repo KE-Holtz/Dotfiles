@@ -84,7 +84,6 @@ in
     nh
     gh
     unzip
-    cloudflare-warp
   ];
 
   # Some programs need SUID wrappers, can be configured further or are
