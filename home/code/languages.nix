@@ -8,8 +8,10 @@
     # --- Rust ---
     rustc
     cargo
+    cargo-generate
     rustfmt
     clippy
+    bacon
 
     # --- Python ---
     python3
