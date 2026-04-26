@@ -132,8 +132,17 @@
 
         clock = {
           format = "{:%b %d  %I:%M %p}";
-          #on-click = "gnome-calendar"; TODO
-          tooltip = false;
+	  tooltip-format = "<tt><small>{calendar}</small></tt>";
+	  calendar = {
+            mode = "month";
+	    on-scroll = 1;
+	    format = with config.lib.stylix.colors.withHashtag; {
+              months   = "<span color='${base0A}'><b>{}</b></span>";
+              days     = "<span color='${base05}'>{}</span>";
+              weekdays = "<span color='${base0D}'><b>{}</b></span>";
+              today    = "<span color='${base08}'><b><u>{}</u></b></span>";
+            };
+	  };
         };
 
         backlight = {
