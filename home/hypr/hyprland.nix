@@ -5,8 +5,26 @@
     enable = true;
 
     settings = {
+      
+      "$laptopScreen" = "eDP-1";
+      "$homeMonitor" = "DP-4";
+      monitor = [
+        "$laptopScreen, preferred, auto, auto"          # Laptop screen
+        "$homeMonitor, preferred, auto, auto"       # External — change to your connector name
+      ];
 
-      monitor = ",preferred,auto,auto";
+      workspace = [
+        "1, monitor:eDP-1, default:true"
+        "2, monitor:eDP-1"
+        "3, monitor:eDP-1"
+        "4, monitor:eDP-1"
+        "5, monitor:eDP-1"
+        "6, monitor:$homeMonitor, default:true"  # Change to match your connector
+        "7, monitor:$homeMonitor"
+        "8, monitor:$homeMonitor"
+        "9, monitor:$homeMonitor"
+        "10, monitor:$homeMonitor"
+      ];
 
       "$terminal" = "kitty";
       "$menu" = "rofi -show drun";
@@ -77,6 +95,7 @@
 	];
       };
 
+
       dwindle = {
 	pseudotile = true;
 	preserve_split = true;
@@ -110,6 +129,7 @@
       };
 
       "$mainMod" = "SUPER";
+      "$secondaryMod" = "ALT";
 
       bind = [
         "$mainMod,F, fullscreen"
@@ -127,21 +147,21 @@
 	"$mainMod, 3, workspace, 3"
 	"$mainMod, 4, workspace, 4"
 	"$mainMod, 5, workspace, 5"
-	"$mainMod, 6, workspace, 6"
-	"$mainMod, 7, workspace, 7"
-	"$mainMod, 8, workspace, 8"
-	"$mainMod, 9, workspace, 9"
-	"$mainMod, 0, workspace, 10"
+	"$secondaryMod, 1, workspace, 6"
+	"$secondaryMod, 2, workspace, 7"
+	"$secondaryMod, 3, workspace, 8"
+	"$secondaryMod, 4, workspace, 9"
+	"$secondaryMod, 5, workspace, 10"
 	"$mainMod SHIFT, 1, movetoworkspace, 1"
 	"$mainMod SHIFT, 2, movetoworkspace, 2"
 	"$mainMod SHIFT, 3, movetoworkspace, 3"
 	"$mainMod SHIFT, 4, movetoworkspace, 4"
 	"$mainMod SHIFT, 5, movetoworkspace, 5"
-	"$mainMod SHIFT, 6, movetoworkspace, 6"
-	"$mainMod SHIFT, 7, movetoworkspace, 7"
-	"$mainMod SHIFT, 8, movetoworkspace, 8"
-	"$mainMod SHIFT, 9, movetoworkspace, 9"
-	"$mainMod SHIFT, 0, movetoworkspace, 10"
+	"$secondaryMod SHIFT, 1, movetoworkspace, 6"
+	"$secondaryMod SHIFT, 2, movetoworkspace, 7"
+	"$secondaryMod SHIFT, 3, movetoworkspace, 8"
+	"$secondaryMod SHIFT, 4, movetoworkspace, 9"
+	"$secondaryMod SHIFT, 5, movetoworkspace, 10"
 	"$mainMod, S, togglespecialworkspace, magic"
 	"$mainMod SHIFT, S, movetoworkspace, special:magic"
 	"$mainMod, mouse_down, workspace, e+1"
