@@ -8,7 +8,6 @@
       "vim.useCtrlKeys" = false;
       "files.autoSave" = "afterDelay";
       "files.autoSaveDelay"= 250;
-      "platformio-ide.useBuiltinPIOCore" = false;
     };
   };
 }
