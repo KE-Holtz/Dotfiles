@@ -23,12 +23,6 @@
     gnumake
     cmake
 
-    # --- JavaScript / TypeScript ---
-    nodejs
-    nodePackages.npm
-    nodePackages.typescript
-    nodePackages.yarn
-
     # --- Go ---
     go
 
