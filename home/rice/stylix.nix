@@ -26,6 +26,7 @@
          name = "Noto Color Emoji";
       };
     };
+    targets.kde.enable = false;
     #Disable waybar - it asks stylix for the monospace font in it's own style
     targets.waybar.enable = false;
     #Disbale vscode colors

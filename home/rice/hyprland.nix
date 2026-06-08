@@ -31,6 +31,7 @@
 
       exec-once = [
 	"waybar"
+	"/run/current-system/sw/bin/kdeconnect-indicator"
       ];
 
       env = [
@@ -142,6 +143,7 @@
 	"$mainMod, l, movefocus, r"
 	"$mainMod, k,    movefocus, u"
 	"$mainMod, j,  movefocus, d"
+	", Print, exec, hyprshot -m region"
 	"$mainMod, 1, workspace, 1"
 	"$mainMod, 2, workspace, 2"
 	"$mainMod, 3, workspace, 3"
