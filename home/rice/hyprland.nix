@@ -10,7 +10,7 @@
       "$homeMonitor" = "DP-4";
       monitor = [
         "$laptopScreen, preferred, auto, auto"          # Laptop screen
-        "$homeMonitor, preferred, auto, auto"       # External — change to your connector name
+        "$homeMonitor, preferred, auto-up, auto"       # External 
       ];
 
       workspace = [
@@ -19,7 +19,7 @@
         "3, monitor:eDP-1"
         "4, monitor:eDP-1"
         "5, monitor:eDP-1"
-        "6, monitor:$homeMonitor, default:true"  # Change to match your connector
+        "6, monitor:$homeMonitor, default:true"
         "7, monitor:$homeMonitor"
         "8, monitor:$homeMonitor"
         "9, monitor:$homeMonitor"
@@ -138,7 +138,6 @@
 	"$mainMod, Q, killactive"
 	"$mainMod SHIFT, F, togglefloating" 
 	"$mainMod, SPACE, exec, $menu"
-	"$mainMod, P, pseudo" #Change
 	"$mainMod, h,  movefocus, l"
 	"$mainMod, l, movefocus, r"
 	"$mainMod, k,    movefocus, u"

@@ -22,8 +22,8 @@
     pkgs.cowsay
     pkgs.prismlauncher
     pkgs.gimp
-    # pkgs.kdePackages.kdenlive
-    # pkgs.kdePackages.kdeconnect-kde
+    pkgs.kdePackages.kdenlive
+    pkgs.kdePackages.kdeconnect-kde
     pkgs.vlc
     pkgs.yazi
     pkgs.thunar

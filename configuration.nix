@@ -24,7 +24,22 @@ in
     keyMap = "us";
    };
 
-  services.printing.enable = true;
+  services.printing = {
+    enable = true;
+    drivers = with pkgs; [
+      gutenprint          # broad generic support
+      gutenprintBin       # proprietary extensions for some models
+      hplip               # HP printers
+      brlaser             # Brother laser printers
+      cnijfilter2         # Canon inkjet
+    ];
+  };
+  # For auto-discovery of network printers via mDNS/IPP
+  services.avahi = {
+    enable = true;
+    nssmdns4 = true;
+    openFirewall = true;
+  };
 
   #Needs to be in here as well as home-manager for some reason
   programs.hyprland = {
@@ -58,7 +73,7 @@ in
   programs.fish.enable = true;
   users.users.kyle = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "networkmanager" "dialout"];
+    extraGroups = [ "wheel" "networkmanager" "dialout" "lp"];
     shell = pkgs.fish;
   };
 
@@ -84,12 +99,18 @@ in
     nh
     gh
     unzip
+    usbutils
   ];
   programs.nix-ld.enable = true;
   programs.nix-ld.libraries = with pkgs; [
     avrdude
     # Add any missing dynamic libraries for unpackaged programs
   ];
+
+  networking.firewall = {
+    allowedTCPPortRanges = [{ from = 1714; to = 1764; }];
+    allowedUDPPortRanges = [{ from = 1714; to = 1764; }];
+  };
 
   # Some programs need SUID wrappers, can be configured further or are
   # started in user sessions.
