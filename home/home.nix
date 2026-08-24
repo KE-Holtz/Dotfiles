@@ -19,6 +19,39 @@
     enable = true;
     saveLocation = "/home/kyle/Documents/Screenshots";
   };
+
+  services.hypridle = {
+    enable = true;
+
+    settings = {
+      general = {
+        lock_cmd = "hyprlock";
+        before_sleep_cmd = "hyprlock";
+      };
+
+      listener = [
+        {
+          timeout = 300;
+          on-timeout = "hyprlock";
+        }
+
+        {
+          timeout = 330;
+          on-timeout = "hyprctl dispatch dpms off";
+          on-resume = "hyprctl dispatch dpms on";
+        }
+
+        {
+          timeout = 1800;
+          on-timeout = "systemctl suspend";
+        }
+      ];
+    };
+  };
+
+  programs.hyprlock.enable = true;
+  
+
   home.packages = [
     pkgs.ffmpeg
     pkgs.fd
@@ -29,12 +62,16 @@
     pkgs.kdePackages.kdenlive
     pkgs.kdePackages.kdeconnect-kde
     pkgs.vlc
+    pkgs.yt-dlp
     pkgs.audacity
     pkgs.yazi
     pkgs.thunar
     pkgs.btop
     pkgs.hledger
     pkgs.hledger-web
+    pkgs.bitwarden-desktop
+    pkgs.jetbrains.pycharm
+    pkgs.networkmanagerapplet
   ];
 
   programs.obs-studio = {

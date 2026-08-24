@@ -250,7 +250,7 @@
         };
 
         "custom/menu" = {
-          format = "";
+            format = "";
           #on-click = "alacritty --class float -e nvim ~/.config/hypr/settings/keybindings.conf";
           tooltip = false;
         };
