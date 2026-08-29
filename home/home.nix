@@ -54,6 +54,7 @@
 
   home.packages = [
     pkgs.ffmpeg
+    pkgs.ocrmypdf
     pkgs.fd
     pkgs.cowsay
     pkgs.prismlauncher
