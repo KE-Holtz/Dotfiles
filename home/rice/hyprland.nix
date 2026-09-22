@@ -8,25 +8,35 @@
       
       "$laptopScreen" = "eDP-1";
       "$homeMonitor" = "DP-4";
+      "$cshCRT" = "DP-1";
       monitor = [
-        "$laptopScreen, preferred, auto, auto"          # Laptop screen
-        "$homeMonitor, preferred, auto-up, auto"       # External 
+        "$laptopScreen, preferred, auto, auto"
+        "$homeMonitor, preferred, auto-up, auto"
+        "$cshCRT, 800x720@60.00Hz, auto-up, auto"
       ];
-
+      windowrule = "float on, size 800 600, match:class ^(floatingTerm)$";
       workspace = [
         "1, monitor:eDP-1, default:true"
         "2, monitor:eDP-1"
         "3, monitor:eDP-1"
         "4, monitor:eDP-1"
         "5, monitor:eDP-1"
-        "6, monitor:$homeMonitor, default:true"
-        "7, monitor:$homeMonitor"
-        "8, monitor:$homeMonitor"
-        "9, monitor:$homeMonitor"
-        "10, monitor:$homeMonitor"
+
+        # "6, monitor:$homeMonitor, default:true"
+        # "7, monitor:$homeMonitor"
+        # "8, monitor:$homeMonitor"
+        # "9, monitor:$homeMonitor"
+        # "10, monitor:$homeMonitor"
+
+        "6, monitor:$cshCRT, default:true"
+        "7, monitor:$cshCRT"
+        "8, monitor:$cshCRT"
+        "9, monitor:$cshCRT"
+        "10, monitor:$cshCRT"
       ];
 
       "$terminal" = "kitty";
+      "$floatingTerm" = "kitty --class=floatingTerm";
       "$menu" = "rofi -show drun";
 
       exec-once = [
@@ -40,8 +50,8 @@
       ];
 
       general = {
-	gaps_in = 5;
-	gaps_out = 5;
+	gaps_in = 3;
+	gaps_out = 3;
 	border_size = 1;
 	resize_on_border = true;
 	allow_tearing = false;
@@ -119,6 +129,7 @@
 	sensitivity = 0;
 	touchpad = {
 	  natural_scroll = false;
+    disable_while_typing = true;
 	};
       };
 
@@ -135,6 +146,7 @@
       bind = [
         "$mainMod,F, fullscreen"
 	"$mainMod, RETURN, exec, $terminal"
+  "$mainMod_SHIFT, RETURN, exec, $floatingTerm"
 	"$mainMod, Q, killactive"
 	"$mainMod SHIFT, F, togglefloating" 
 	"$mainMod, SPACE, exec, $menu"
