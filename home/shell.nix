@@ -13,6 +13,7 @@
       ls = "eza";
       ll = "eza -la";
       la = "eza -la";
+      nv = "nvim .";
     };
   };
 

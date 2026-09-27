@@ -20,8 +20,8 @@
 
   home.packages = with pkgs; [
     # --- Java ---
-    openjdk21
-
+    # openjdk21  Replaced with the goofy ahh one we have to use for CS140
+    (callPackage ./liberica.nix {})
     # --- Rust ---
     rustc
     cargo
@@ -31,7 +31,7 @@
     bacon
 
     # --- Python ---
-    python3
+    python314
     python3Packages.pip
     python3Packages.virtualenv
 

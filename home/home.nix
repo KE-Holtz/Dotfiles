@@ -62,6 +62,7 @@
     pkgs.blender
     pkgs.kdePackages.kdenlive
     pkgs.kdePackages.kdeconnect-kde
+    pkgs.kdePackages.okular
     pkgs.vlc
     pkgs.yt-dlp
     pkgs.audacity
@@ -73,6 +74,8 @@
     pkgs.bitwarden-desktop
     pkgs.jetbrains.pycharm
     pkgs.networkmanagerapplet
+    pkgs.mpv
+    pkgs.typst
   ];
 
   programs.obs-studio = {
